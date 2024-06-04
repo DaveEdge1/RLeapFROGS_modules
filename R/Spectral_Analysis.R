@@ -18,6 +18,8 @@ ggplot(data = lr04, mapping = aes(x=Year,y=d18O))+geom_line() + scale_y_reverse(
 lr04_trimmed <- lr04 %>%
   filter(Year < 3000)
 
+#I think this is better:
+lr04_trimmed <- filter(lr04,Year < 3000)
 
 p1 <- ggplot(data = lr04_trimmed, mapping = aes(x=Year,y=d18O))+geom_line() + scale_y_reverse() +
   labs(title = "57 globally distributed benthic δ18O records, Lisiecki et al., 2005",
